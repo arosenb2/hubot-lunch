@@ -16,4 +16,4 @@
 
 module.exports = (robot) ->
   robot.hear /lunch/i, (msg) ->
-    if new Date.getHours < 12 then msg.reply "Hey #{msg.message.user.name}, isn't it a bit early to start talking about lunch?"
+    if new Date().getHours() < 12 then msg.send "Hey #{msg.message.user.name}, isn't it a bit early to start talking about lunch?"
