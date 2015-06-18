@@ -18,5 +18,5 @@ module.exports = (robot) ->
   robot.hear /lunch/i, (msg) ->
     if ! isPastLunchTime() then msg.reply "Hey #{msg.message.user.name}, isn't it a bit early to start talking about lunch?"
 
-isPastLunchTime = (time) ->
-  return time.getHours() > 12
+isPastLunchTime = ->
+  return new Date().getHours() > 12
