@@ -1,7 +1,7 @@
 {
   "name": "hubot-lunchtime",
   "description": "Lunch time validation from Hubot",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Aaron Rosenbaum <aaron.rosenbaum@gmail.com>",
   "license": "MIT",
   "keywords": [
@@ -17,7 +17,8 @@
     "url": "https://github.com/arosenb2/hubot-lunch/issues"
   },
   "dependencies": {
-    "coffee-script": "~1.6"
+    "coffee-script": "~1.6",
+    "moment-timezone": "0.4.0"
   },
   "devDependencies": {
     "mocha": "*",

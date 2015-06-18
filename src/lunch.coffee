@@ -14,6 +14,9 @@
 # Author:
 #   arosenb2
 
+moment = require('moment-timezone')
+
 module.exports = (robot) ->
   robot.hear /lunch/i, (msg) ->
-    if new Date().getHours() < 12 then msg.send "Hey #{msg.message.user.name}, isn't it a bit early to start talking about lunch?"
+    isAppropriateLunchTime = moment().tz("America/New_York").getHours() < 12
+    if isAppropriateLunchTime then msg.send "Hey #{msg.message.user.name}, isn't it a bit early to start talking about lunch?"
