@@ -18,6 +18,6 @@ moment = require('moment-timezone')
 
 module.exports = (robot) ->
   robot.hear /lunch/i, (msg) ->
-  	timezone = process.env.HUBOT_MOMENT_TIMEZONE || "Europe/London"
+    timezone = process.env.HUBOT_MOMENT_TIMEZONE || "Europe/London"
     isAppropriateLunchTime = moment().tz(timezone).getHours() < 12
     if isAppropriateLunchTime then msg.send "Hey #{msg.message.user.name}, isn't it a bit early to start talking about lunch?"
