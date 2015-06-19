@@ -5,7 +5,7 @@
 #   None
 #
 # Configuration:
-#   None
+#   HUBOT_MOMENT_TIMEZONE - http://momentjs.com/timezone Timezone. If not present, defaults to Europe/London.
 #
 # Commands:
 #   lunch -> Isn't it a little early to be talking about lunch?
@@ -18,5 +18,6 @@ moment = require('moment-timezone')
 
 module.exports = (robot) ->
   robot.hear /lunch/i, (msg) ->
-    isAppropriateLunchTime = moment().tz("America/New_York").getHours() < 12
+  	timezone = process.env.HUBOT_MOMENT_TIMEZONE || "Europe/London"
+    isAppropriateLunchTime = moment().tz(timezone).getHours() < 12
     if isAppropriateLunchTime then msg.send "Hey #{msg.message.user.name}, isn't it a bit early to start talking about lunch?"
