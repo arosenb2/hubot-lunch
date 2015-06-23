@@ -1,7 +1,7 @@
 {
   "name": "hubot-lunchtime",
   "description": "Lunch time validation from Hubot",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "Aaron Rosenbaum <aaron.rosenbaum@gmail.com>",
   "license": "MIT",
   "keywords": [
